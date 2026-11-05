@@ -10,9 +10,8 @@ const TITLE = "The 4-Week Healthy Habits Reset | Printable Wellness Workbook";
 const DESC =
   "A simple 28-day printable wellness workbook with meal planning pages, habit trackers, grocery lists and practical guides.";
 
-// Replace these with your real checkout URLs.
-const STARTER_CHECKOUT_URL = "PASTE_STARTER_CHECKOUT_URL_HERE";
-const COMPLETE_CHECKOUT_URL = "PASTE_COMPLETE_CHECKOUT_URL_HERE";
+const STARTER_CHECKOUT_URL = "https://pay.cakto.com.br/pncwk4d_1286399";
+const COMPLETE_CHECKOUT_URL = "https://pay.cakto.com.br/qzckg4a_1286363";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,15 +57,11 @@ function Brand() {
 }
 
 function CheckoutButton({ url, label, variant }: { url: string; label: string; variant: string }) {
-  if (url.startsWith("PASTE_")) {
-    return (
-      <span className={`btn ${variant} btn-placeholder`} role="button" aria-disabled="true" title="Checkout link not added yet">
-        {label}
-        <small>Placeholder · checkout link not added yet</small>
-      </span>
-    );
-  }
-  return <a className={`btn ${variant}`} href={url}>{label}</a>;
+  return (
+    <a className={`btn ${variant}`} href={url} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
+  );
 }
 
 function Index() {
@@ -188,7 +183,7 @@ function Index() {
                 <CheckoutButton url={COMPLETE_CHECKOUT_URL} label="Get the Complete Bundle" variant="btn-primary" />
               </article>
             </div>
-            <p className="price-foot">Secure checkout will be provided by the seller's selected payment platform. Checkout links have not been added yet.</p>
+            <p className="price-foot">Secure checkout will be provided by the seller's selected payment platform.</p>
           </div>
         </section>
 

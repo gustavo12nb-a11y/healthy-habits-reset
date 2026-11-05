@@ -21,8 +21,5 @@
 .samples{grid-template-columns:repeat(4,1fr)}
 .sample-card img{height:300px}
 .sample-card:last-child{grid-column:auto;max-width:none;justify-self:stretch}
-.btn-placeholder{cursor:not-allowed;opacity:.85;flex-direction:column;gap:2px}
-.btn-placeholder:hover{transform:none;box-shadow:none}
-.btn-placeholder small{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
 @media(max-width:1000px){.samples{grid-template-columns:1fr 1fr}.sample-card img{height:340px}}
 @media(max-width:600px){.samples{grid-template-columns:1fr}.sample-card img{height:auto;max-height:520px}.cta-row .btn{flex:1 1 100%}.hero h1{font-size:2.35rem}.float-note{position:static;margin-top:12px;display:inline-block}}
