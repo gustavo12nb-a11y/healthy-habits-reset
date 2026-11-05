@@ -1,0 +1,5 @@
+[{"capability":"code","source":"static index.html","outcome":"migrate","status":"verified","next_action":"none"},
+{"capability":"assets","source":"assets/*.png","outcome":"migrate","status":"verified","next_action":"none"},
+{"capability":"checkout links","source":"placeholder URLs","outcome":"preserve placeholder","status":"pending","next_action":"user supplies Starter and Complete checkout URLs"},
+{"capability":"contact link","source":"placeholder","outcome":"preserve placeholder","status":"pending","next_action":"user supplies support email"},
+{"capability":"database/auth/records","source":"none","outcome":"not applicable","status":"verified","next_action":"none"}]
