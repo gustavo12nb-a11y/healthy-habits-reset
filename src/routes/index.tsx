@@ -4,6 +4,7 @@ import cover from "@/assets/cover-mockup.png.asset.json";
 import grocery from "@/assets/sample-grocery-list.png.asset.json";
 import tracker from "@/assets/sample-habit-tracker.png.asset.json";
 import plate from "@/assets/sample-balanced-plate-guide.png.asset.json";
+import printing from "@/assets/sample-printing-instructions.png.asset.json";
 
 const TITLE = "The 4-Week Healthy Habits Reset | Printable Wellness Workbook";
 const DESC =
@@ -56,6 +57,18 @@ function Brand() {
   );
 }
 
+function CheckoutButton({ url, label, variant }: { url: string; label: string; variant: string }) {
+  if (url.startsWith("PASTE_")) {
+    return (
+      <span className={`btn ${variant} btn-placeholder`} role="button" aria-disabled="true" title="Checkout link not added yet">
+        {label}
+        <small>Placeholder · checkout link not added yet</small>
+      </span>
+    );
+  }
+  return <a className={`btn ${variant}`} href={url}>{label}</a>;
+}
+
 function Index() {
   return (
     <div className="hh">
@@ -106,6 +119,7 @@ function Index() {
                 [grocery.url, "Sample weekly grocery shopping list page", "Weekly Grocery Lists", "Organize produce, protein foods, pantry staples, and the extras you need."],
                 [tracker.url, "Sample weekly habit tracker page", "Daily Habit Tracking", "Choose a few realistic habits and mark the days you practice them."],
                 [plate.url, "Sample flexible balanced plate visual guide", "Flexible Food Guidance", "A simple visual starting point for building balanced meals in a way that suits you."],
+                [printing.url, "Sample printing instructions page", "Easy Printing Instructions", "Clear tips for printing your pages at home in A4 or US Letter."],
               ].map(([src, alt, h, p]) => (
                 <article className="sample-card" key={h}>
                   <img src={src} alt={alt} />
@@ -161,7 +175,7 @@ function Index() {
                 <ul>
                   <li>Personal goals and 4-week roadmap</li><li>4 weekly planning sheets</li><li>4 weekly meal planners</li><li>4 grocery shopping lists</li><li>4 habit trackers</li><li>4 weekly reflection sheets</li><li>A4 and US Letter PDF files</li>
                 </ul>
-                <a className="btn btn-secondary" href={STARTER_CHECKOUT_URL}>Get the Starter Kit</a>
+                <CheckoutButton url={STARTER_CHECKOUT_URL} label="Get the Starter Kit" variant="btn-secondary" />
               </article>
               <article className="price-card featured">
                 <span className="popular">Best value</span>
@@ -171,7 +185,7 @@ function Index() {
                 <ul>
                   <li>Everything in the Starter Kit</li><li>12 meal inspiration cards</li><li>Flexible balanced-plate visual guide</li><li>Pantry and eating-out guides</li><li>Low-pressure movement menu</li><li>Sleep &amp; stress check-in</li><li>Non-scale progress tracker</li><li>A4 and US Letter PDF files</li>
                 </ul>
-                <a className="btn btn-primary" href={COMPLETE_CHECKOUT_URL}>Get the Complete Bundle</a>
+                <CheckoutButton url={COMPLETE_CHECKOUT_URL} label="Get the Complete Bundle" variant="btn-primary" />
               </article>
             </div>
             <p className="price-foot">Secure checkout will be provided by the seller's selected payment platform. Checkout links have not been added yet.</p>
